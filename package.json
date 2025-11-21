@@ -4,7 +4,17 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "start": "react-native start"
+    "android:release": "react-native run-android --mode=release",
+    "start": "react-native start",
+    "start:reset": "react-native start --reset-cache",
+    "clean": "cd android && ./gradlew clean && cd ..",
+    "clean:all": "rm -rf node_modules && npm install && npm run clean",
+    "dev": "./run-dev.sh",
+    "wireless": "./wireless-debug.sh",
+    "build:android": "cd android && ./gradlew assembleRelease",
+    "build:android:debug": "cd android && ./gradlew assembleDebug",
+    "logs": "react-native log-android",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {
     "react": "19.1.1",
